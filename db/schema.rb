@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2020_08_26_111651) do
     t.integer "people_quantity"
     t.text "ingredients", default: [], array: true
     t.text "tags", default: [], array: true
+    t.string "img_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

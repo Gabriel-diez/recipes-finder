@@ -18,7 +18,8 @@ recipes.each do |r|
         total_time: r['total_time'],
         people_quantity: r['people_quantity'].to_i,
         tags: r['tags'],
-        ingredients: r['ingredients']
+        ingredients: r['ingredients'],
+        img_url: r['image'],
     )
     recipe.save
 end

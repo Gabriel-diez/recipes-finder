@@ -6,6 +6,7 @@ class CreateRecipes < ActiveRecord::Migration[6.0]
       t.integer :people_quantity
       t.text :ingredients, array: true, default: []
       t.text :tags, array: true, default: []
+      t.string :img_url
 
       t.timestamps
     end
