@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Improvements
 
-Things you may want to cover:
+- Create Api services for react call
 
-* Ruby version
+- Implement e2e testing
 
-* System dependencies
+- Add filter on people quantity / tags
 
-* Configuration
+- Add checkbox to display recipes with all ingredients or with only one of the list
 
-* Database creation
+- Add link to recipe details
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
