@@ -10,7 +10,6 @@ const RecipeIndex = () => {
   const classes = useStyles();
   const [ingredients, setIngredients] = useState([]);
   const [recipes, setRecipes] = useState([]);
-  const [error, setError] = useState('');
 
   const handleChange = (values) => {
     const formattedValues = values && values.map((i) => i.label.trim()) || [];
