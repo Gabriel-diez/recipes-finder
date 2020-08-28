@@ -10,6 +10,7 @@ const RecipeIndex = () => {
   const classes = useStyles();
   const [ingredients, setIngredients] = useState([]);
   const [recipes, setRecipes] = useState([]);
+  const [error, setError] = useState('');
 
   const handleChange = (values) => {
     const formattedValues = values && values.map((i) => i.label.trim()) || [];
@@ -22,8 +23,11 @@ const RecipeIndex = () => {
       .then((r) => {
         if (r.status === 200 && r.data)
           setRecipes(r.data);
+          setError('');
       })
-      .catch(e => console.log(e));
+      .catch((e) => {
+        setError('Une erreur est survenue. Veuillez réessayer plus tard merci.');
+      });
     }
 }, [ingredients]);
 
@@ -41,6 +45,7 @@ const RecipeIndex = () => {
       <RecipeList
         recipes={recipes}
       />
+      {error && (<p>{error}</p>)}
     </div>
   );
 }

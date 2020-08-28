@@ -1,5 +1,4 @@
-import React, { useState, useEffect, Fragment } from 'react'
-import ReactDOM from 'react-dom'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
