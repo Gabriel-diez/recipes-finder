@@ -1,14 +1,7 @@
 class Api::V1::RecipeController < ApplicationController
     def search
-        ingredients = []
         limit = 30
-        if search_params[:ingredients]
-            ingredients = search_params[:ingredients].split(',')
-        end
-
-        formatted_ingredients = ingredients.map {|val| "%#{val}%" }
-        recipes = repository.search(formatted_ingredients, limit)
-
+        recipes = UseCase::Recipe::Search.new(repository).call(search_params, limit)
         render json: recipes
     end
 
