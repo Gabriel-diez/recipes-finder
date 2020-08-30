@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import CreatableSelect from 'react-select/creatable';
-import axios from 'axios';
+import RecipeApi from '../../api/recipeApi';
 import { makeStyles } from '@material-ui/core/styles';
 import RecipeList from './RecipeList';
 
@@ -19,15 +19,18 @@ const RecipeIndex = () => {
 
   useEffect(() => {
     if (ingredients.length !== 0) {
-      axios.get(`api/v1/recipe/search?ingredients=${ingredients.toString()}`)
-      .then((r) => {
-        if (r.status === 200 && r.data)
-          setRecipes(r.data);
-          setError('');
-      })
-      .catch((e) => {
-        setError('Une erreur est survenue. Veuillez réessayer plus tard merci.');
-      });
+      RecipeApi.search(ingredients)
+        .then((res) => {
+          if (res.success && res.data) {
+            setRecipes(res.data);
+            setError('');
+          }
+        })
+        .catch((e) => {
+          setError('Une erreur est survenue. Veuillez réessayer plus tard merci.');
+        });
+    } else {
+      setRecipes([]);
     }
 }, [ingredients]);
 
