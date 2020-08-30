@@ -2,8 +2,6 @@
 
 ## Improvements
 
-- Create Api services for react call
-
 - Implement e2e testing
 
 - Add filter on people quantity / tags
